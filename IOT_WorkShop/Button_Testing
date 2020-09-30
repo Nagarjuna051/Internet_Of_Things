@@ -1,0 +1,18 @@
+int led=12;
+int button=11;
+void setup(){
+pinMode(led,OUTPUT);
+pinMode(button,INPUT);
+Serial.begin(9600);
+}
+void loop(){
+int but=digitalRead(11);
+  if(but==1){
+  digitalWrite(led,HIGH);
+    Serial.println("led is on......");
+  }
+  else{
+  digitalWrite(led,LOW);
+    Serial.println("led is off.......");
+  }
+}
