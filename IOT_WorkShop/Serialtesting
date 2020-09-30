@@ -1,0 +1,42 @@
+int red=2;
+int blue=3;
+int green=4;
+void setup(){
+pinMode(red,OUTPUT);
+pinMode(blue,OUTPUT);
+pinMode(green,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+digitalWrite(red,HIGH);
+digitalWrite(green,LOW);
+digitalWrite(blue,LOW);
+Serial.println("Red led is on");
+delay(1000);
+digitalWrite(red,LOW);
+digitalWrite(green,LOW);
+digitalWrite(blue,HIGH);
+Serial.println("Blue led is on");
+delay(1000);
+digitalWrite(red,LOW);
+digitalWrite(green,HIGH);
+digitalWrite(blue,LOW);
+Serial.println("Green led is on");
+delay(1000);
+digitalWrite(red,HIGH);
+digitalWrite(green,HIGH);
+digitalWrite(blue,LOW);
+Serial.println("Yellow led is on");
+delay(1000);
+digitalWrite(red,HIGH);
+digitalWrite(green,LOW);
+digitalWrite(blue,HIGH);
+Serial.println("Magenta led is on");
+delay(1000);
+digitalWrite(red,LOW);
+digitalWrite(green,HIGH);
+digitalWrite(blue,HIGH);
+Serial.println("Cran led is on");
+delay(1000);
+
+}
