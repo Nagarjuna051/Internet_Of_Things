@@ -1,0 +1,18 @@
+int robo=8;
+void setup(){
+pinMode(robo,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+  if(Serial.available()){
+  String str=Serial.readString();
+    if(str=="ON"){
+    digitalWrite(robo,HIGH);
+    Serial.println("Led is on");
+    }
+    if(str=="OFF"){
+    digitalWrite(robo,LOW);
+    Serial.println("Led is off");
+    }
+  }
+}
