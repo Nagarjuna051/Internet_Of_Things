@@ -1,0 +1,18 @@
+int led=12;
+void setup(){
+pinMode(led,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+  if(Serial.available()){
+  char ch=Serial.read();
+    if(ch=='A'){
+    Serial.println("Led ON");
+    digitalWrite(led,HIGH);
+    }
+    if(ch=='B'){
+    Serial.println("Led Off");
+    digitalWrite(led,LOW);
+  }
+}
+}
