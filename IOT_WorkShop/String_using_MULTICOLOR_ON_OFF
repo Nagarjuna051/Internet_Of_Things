@@ -1,0 +1,58 @@
+int red=2;
+int blue=3;
+int green=4;
+void setup(){
+pinMode(red,OUTPUT);
+pinMode(blue,OUTPUT);
+pinMode(green,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+  if (Serial.available()){
+    String str=Serial.readString();
+    if(str=="red"){
+    digitalWrite(red,HIGH);
+    digitalWrite(blue,LOW);
+    digitalWrite(green,LOW);
+    Serial.println("RED LED is ON");
+    }
+    if(str=="blue"){
+    digitalWrite(red,LOW);
+    digitalWrite(blue,HIGH);
+    digitalWrite(green,LOW);
+    Serial.println("BLUE LED is ON");
+    }
+    if(str=="green"){
+    digitalWrite(red,LOW);
+    digitalWrite(blue,LOW);
+    digitalWrite(green,HIGH);
+    Serial.println("GREEN LED is ON");
+    }
+ 
+    if(str=="yellow"){
+    digitalWrite(red,HIGH);
+    digitalWrite(blue,LOW);
+    digitalWrite(green,HIGH);
+    Serial.println("YELLOW LED is ON");
+    }
+    if(str=="cyan"){
+    digitalWrite(red,LOW);
+    digitalWrite(blue,HIGH);
+    digitalWrite(green,HIGH);
+    Serial.println("CYAN LED is ON");
+    }
+    if(str=="magenta"){
+    digitalWrite(red,HIGH);
+    digitalWrite(blue,HIGH);
+    digitalWrite(green,LOW);
+    Serial.println("MAGENTA LED is ON");
+    }
+    if(str=="white"){
+    digitalWrite(red,HIGH);
+    digitalWrite(blue,HIGH);
+    digitalWrite(green,HIGH);
+    Serial.println("WHITE LED is ON");
+    }
+    
+  }
+}
