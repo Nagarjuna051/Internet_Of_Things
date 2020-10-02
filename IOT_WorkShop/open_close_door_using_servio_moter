@@ -1,0 +1,22 @@
+#include<Servo.h>
+Servo servo;
+void setup(){
+servo.attach(3);
+Serial.begin(9600);
+}
+void loop(){
+if(Serial.available()){
+String str=Serial.readString();
+  if(str=="open"){
+  servo.write(130);
+  Serial.println("Door Opened");
+  }
+  else if(str=="close"){
+  servo.write(30);
+  Serial.println("Door closed");
+  }
+  else{
+  Serial.println("only enter open or close");
+  }
+}
+}
