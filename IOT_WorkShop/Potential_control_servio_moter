@@ -1,0 +1,13 @@
+#include<Servo.h>
+Servo servo;
+int vr=A0;
+void setup(){
+servo.attach(11);
+Serial.begin(9600);
+}
+void loop(){
+  int angle=analogRead(A0);
+  angle=map(angle,0,1023,0,179);
+  servo.write(angle);
+  delay(10);
+}
