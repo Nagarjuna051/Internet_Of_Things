@@ -7,3 +7,14 @@ void loop(){
 int sensor=analogRead(a);
 Serial.println(sensor);
 }
+##########################################################
+int ldr=A0;
+void setup(){
+pinMode(ldr,INPUT);
+Serial.begin(9600);
+}
+void loop(){
+  int ldrval=analogRead(ldr);
+  Serial.println(ldrval);
+  
+}
