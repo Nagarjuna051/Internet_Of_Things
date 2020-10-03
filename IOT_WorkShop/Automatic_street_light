@@ -1,0 +1,19 @@
+int ldr=A0;
+int led=6;
+void setup(){
+pinMode(ldr,INPUT);
+pinMode(led,OUTPUT);
+Serial.begin(9600);
+}
+void loop(){
+  int ldrval=analogRead(ldr);
+ // Serial.println(ldrval);
+  if(ldrval<300){
+    digitalWrite(led,HIGH);
+    Serial.println("LED is ON");
+  }
+  else{
+    digitalWrite(led,LOW);
+    Serial.println("LED is OFF");
+  }
+}
