@@ -1,0 +1,9 @@
+int pir=7;
+void setup(){
+pinMode(pir,INPUT);
+Serial.begin(9600);
+}
+void loop(){
+int val=digitalRead(pir);
+Serial.println(val);
+}
