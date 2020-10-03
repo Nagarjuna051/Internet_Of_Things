@@ -1,0 +1,21 @@
+int ldr=A0;
+int led=6;
+int pir=7;
+void setup(){
+pinMode(ldr,INPUT);
+pinMode(led,OUTPUT);
+pinMode(pir,INPUT);
+Serial.begin(9600);
+}
+void loop(){
+  int ldrval=analogRead(ldr);
+  int pirval=digitalRead(pir);
+  Serial.println(ldrval);
+  Serial.println(pirval);
+  if(pirval==1 && ldrval<300){
+  digitalWrite(led,HIGH);
+  }
+  else{
+  digitalWrite(led,LOW);
+  }
+}
