@@ -1,0 +1,62 @@
+pins	Arduino
+
+1   	gnd
+2   	+5v
+3	    gnd
+4   	12 pin
+5	    gnd
+6	    11 pin
+7	    no
+8	    no
+9 	  no
+10	  no
+11	  5pin
+12 	  4pin
+13	  3pin
+14	  2pin
+15	  +5v
+16	  gnd
+
+Program
+#include <LiquidCrystal.h>
+LiquidCrystal ld(12,11,5,4,3,2);//re,enable,data5,4,3,2
+void setup(){
+ld.begin(16,2);
+ld.print("Hello World");
+}
+void loop(){
+}
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+LCD scrolling Left
+#include <LiquidCrystal.h>
+LiquidCrystal ld(12,11,5,4,3,2);
+void setup(){
+ld.begin(16,2);
+}
+void loop(){
+ld.print("Hello World");
+ld.setCursor(0,1);
+ld.print("Welcome To Nagarjuna");
+delay(750);
+ld.scrollDisplayLeft();
+ld.setCursor(0,0);
+}
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+NOTICE BOARD
+#include<LiquidCrystal.h>
+LiquidCrystal carona(12,11,5,4,3,2);
+void setup(){
+carona.begin(16,2);
+Serial.begin(9600);
+}
+void loop(){
+if(Serial.available()){
+delay(100);
+carona.clear();
+while(Serial.available()>0){
+carona.write(Serial.read());
+}
+}
+}
+
