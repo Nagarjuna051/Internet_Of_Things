@@ -1,0 +1,39 @@
+#include<LiquidCrystal.h>
+LiquidCrystal lcd(12,11,5,4,3,2);
+void setup(){
+lcd.begin(16,2);
+}
+void loop(){
+int value1=analogRead(A2);
+  lcd.setCursor(0,0);
+  lcd.print("hai");
+  lcd.setCursor(4,1);
+  lcd.print("Value");
+  lcd.setCursor(10,1);
+  lcd.print(value1);
+  //lcd.autoscroll();
+  delay(500);
+}
+#########################################
+#include<LiquidCrystal.h>
+LiquidCrystal lcd(12,11,5,4,3,2);
+void setup(){
+lcd.begin(16,2);
+lcd.print("Hello,World");
+}
+void loop(){
+  
+  for(int i=0;i<13;i++){
+  lcd.scrollDisplayLeft();
+  delay(500);
+  }
+  for(int i=0;i<29;i++){
+  lcd.scrollDisplayRight();
+  delay(500);
+  }
+  for(int i=0;i<16;i++){
+  lcd.scrollDisplayLeft();
+  delay(500);
+  }  
+  
+}
